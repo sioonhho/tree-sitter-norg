@@ -6796,18 +6796,25 @@
       ]
     },
     "tag_param": {
-      "type": "CHOICE",
-      "members": [
-        {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "word"
-          },
-          "named": false,
-          "value": "_lowercase"
-        }
-      ]
+      "type": "REPEAT1",
+      "content": {
+        "type": "ALIAS",
+        "content": {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "word"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "italic_open"
+            }
+          ]
+        },
+        "named": false,
+        "value": "_lowercase"
+      }
     },
     "tag_parameters": {
       "type": "SEQ",

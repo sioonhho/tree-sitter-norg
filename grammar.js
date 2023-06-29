@@ -886,11 +886,17 @@ module.exports = grammar({
         ),
 
         tag_param: $ =>
-        choice(
-            alias($.word, "_lowercase"),
-            // TODO:
-            // or backslash
-            // or variable
+        repeat1(
+          alias(
+            choice(
+              $.word,
+              $.italic_open
+              // TODO:
+              // or backslash
+              // or variable
+            ),
+            "_lowercase"
+          )
         ),
 
         tag_parameters: $ =>
